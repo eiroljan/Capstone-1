@@ -4,7 +4,7 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 import * as yup from 'yup';
 
-import ClientForm from 'components/ClientForm';
+import UserForm from 'components/UserForm';
 import { createUser, modifyUser, fetchUsers } from 'state/actions/users';
 import paths from 'pages/Router/paths';
 import { useFormatMessage } from 'hooks';
@@ -74,11 +74,11 @@ const Submenu = () => {
                     </h1>
                 </div>
             </section>
-            <section className="section is-main-section ">
+            <section className="section is-main-section">
                 {isEditing && !userData ? (
                     <ClipLoader />
                 ) : (
-                    <ClientForm
+                    <UserForm
                         isEditing={isEditing}
                         user={
                             isEditing

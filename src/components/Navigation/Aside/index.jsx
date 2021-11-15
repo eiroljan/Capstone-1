@@ -110,7 +110,7 @@ const Aside = ({ handleMobileToggle }) => {
           </li>
           <li>
             <NavLink
-                to={paths.SECTION}
+                to={paths.CLIENTS}
                 className="has-icon"
                 onClick={handleMobileToggle}
             >
