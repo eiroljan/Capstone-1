@@ -34,18 +34,20 @@ Open Source Code with React ⚛️ and Firebase 🔥designed to quickly spin up 
 
 ---
 
-This project is using a customized version ported into React of the [Admin Dashboard Template](https://github.com/vikdiesel/admin-one-bulma-dashboard) made by [Viktor Kuzhelny](https://github.com/vikdiesel).
+This project is using a customized version ported into React of the [Admin Dashboard Template](https://github.com/vikdiesel/admin-one-bulma-dashboard) made by [Viktor Kuzhelny](https://github.com/vikdiesel) and Public Template by [Create Thrive](https://github.com/CreateThrive/react-firebase-admin).
 
 ## What is this?
 
-React Firebase Admin is our in-house admin dashboard boilerplate, used in many of our software projects here at [CreateThrive](https://createthrive.com/). After months of hard work, we decided to make it public and support the open source community.
+Open Source code of FHSIS Mobile Version. 
 
 ## Why should I use it?
 
 - This project was bootstrapped with CRA (Create React App), this means it comes with all the good features we all know and love such as built-in scripts, to make our app a PWA (Progressive Web App) and much more!.
 - It is customizable.
+- It is PWA (Progressive Web App) ready. Works with Android(Installable),IOS(Installable), Desktop(Installable) and Web browsers.
 - It uses Firebase.
-- It has all the basic features you want in your app.
+- It currently supports Maternal Care Services ATM.
+- DOH FHSIS Compatible/Interoperable 
 - It is easy to use.
 
 ## Features
@@ -58,15 +60,15 @@ React Firebase Admin is our in-house admin dashboard boilerplate, used in many o
 - Create/modify/delete users
 - Automatic email invitation to new users
 - Image uploading
-- Change/Reset Password built into the dasbhoard.
+- Change/Reset Password built into the dashboard.
 - User filtering and search
-- Built-in CI (Continous integration)
-- Built-in CD (Continous deployment)
+- Built-in CI (Continuous integration)
+- Built-in CD (Continuous deployment)
 - PWA ready thanks to CRA and Firebase
 - Multi-tenancy
 - Internationalization (English/Spanish)
-- Create/modify/delete teams
-- Add/delete team members
+- Add Future Functions Here
+
 
 ## Tech Stack
 
@@ -159,14 +161,12 @@ For  access to the demo <a href="https://capstone-93557.firebaseapp.com//">demo 
 We'd like to thank these awesome people who made this whole thing happen:
 
 <ul>
-  <li><a href="https://github.com/MateoKruk">Mateo Kruk</a></li>
-    <li><a href="https://github.com/tpiaggio">Tomas Piaggio</a></li>
-    <li><a href="https://github.com/jbheber">Juan Heber</a></li>
-    <li><a href="https://github.com/vikdiesel">Viktor Kuzhelny</a></li>
-    <li><a href="https://github.com/TOPOFGR">Franco Galeano</a></li>
-    <li><a href="https://github.com/jfocco">Juan Focco</a></li>
+ <li><a href="https://github.com/GeneGulanesJr">Gene Gulanes Jr</a></li>
+    <li><a href="https://github.com/jeffigy">Jeffy Evangelista</a></li>
+    <li><a href="https://github.com/eiroljan">Eirol Coronado</a></li>
+    <li><a href="https://github.com/delgadoit111">Jhon Delgado</a></li>
 </ul>
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2020 <a href="https://createthrive.com">CreateThrive</a>. For more information see LICENSE.md.
+This project is licensed under the MIT license, Copyright (c) 2021 Gulanes and Co. For more information see LICENSE.md.
