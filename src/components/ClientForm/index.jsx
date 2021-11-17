@@ -7,10 +7,12 @@ import { useForm, Controller } from 'react-hook-form';
 import classNames from 'classnames';
 import { yupResolver } from '@hookform/resolvers';
 
-import { usersCleanUp } from 'state/actions/users';
+import { clientsCleanUp } from 'state/actions/client';
 import { useFormatDate, useFormatMessage } from 'hooks';
 import DatePicker from 'components/DatePicker';
 import ErrorMessage from 'components/ErrorMessage';
+
+
 
 import './UserForm.scss';
 
@@ -22,6 +24,7 @@ const ClientForm = ({ isEditing, isProfile, user, onSubmitHandler, schema }) => 
     }),
     shallowEqual
   );
+
 
   const dispatch = useDispatch();
 
@@ -36,8 +39,10 @@ const ClientForm = ({ isEditing, isProfile, user, onSubmitHandler, schema }) => 
     if (success) {
       setValue('file', null);
     }
-    return () => dispatch(usersCleanUp());
+    return () => dispatch(clientsCleanUp());
   }, [dispatch, success, setValue]);
+
+  
 
   const invalidEmailMessage = useFormatMessage('UserForm.invalidEmail');
 
@@ -55,6 +60,8 @@ const ClientForm = ({ isEditing, isProfile, user, onSubmitHandler, schema }) => 
 
   const adminMessage = useFormatMessage('UserForm.admin');
 
+ 
+   
   return (
     <>
       <div className="tile is-ancestor">
@@ -100,7 +107,7 @@ const ClientForm = ({ isEditing, isProfile, user, onSubmitHandler, schema }) => 
                         {/* Year */}
                         <div className="field">
                           <div className="control">
-                            <input type="text" className="input" placeholder="Year"/>
+                            <input type="text" className="input" placeholder="Year" />
                           </div>
                         </div>
                         {/* Birthing Center */}
@@ -532,114 +539,11 @@ const ClientForm = ({ isEditing, isProfile, user, onSubmitHandler, schema }) => 
             </div>
           </div>
         </div>
-        {/* <div className="tile is-parent preview">
-          <div className="card tile is-child">
-            <header className="card-header">
-              <p className="card-header-title">
-                <span className="icon">
-                  <i className="mdi mdi-account default" />
-                </span>
-                {useFormatMessage('UserForm.userPreview')}
-              </p>
-            </header>
-            <div className="card-content">
-              {imagePreviewUrl && (
-                <>
-                  <div className="is-user-avatar image has-max-width is-aligned-center">
-                    <img
-                      className="user-avatar"
-                      src={imagePreviewUrl}
-                      alt="User profile logo preview"
-                    />
-                  </div>
-                  <hr />
-                </>
-              )}
-
-              {!isEditing && (
-                <div className="field">
-                  <label className="label">{emailMessage}</label>
-                  <div className="control is-clearfix">
-                    <input
-                      data-testid="email"
-                      type="text"
-                      readOnly="readOnly"
-                      className="input is-static"
-                      value={watch('email')}
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div className="field">
-                <label className="label">
-                  {useFormatMessage('UserForm.name')}
-                </label>
-                <div className="control is-clearfix">
-                  <input
-                    data-testid="name"
-                    type="text"
-                    readOnly="readOnly"
-                    className="input is-static"
-                    value={watch('name')}
-                  />
-                </div>
-              </div>
-
-              <div className="field">
-                <label className="label">
-                  {useFormatMessage('UserForm.location')}
-                </label>
-                <div className="control is-clearfix">
-                  <input
-                    data-testid="location"
-                    type="text"
-                    readOnly="readOnly"
-                    className="input is-static"
-                    value={watch('location')}
-                  />
-                </div>
-              </div>
-
-              {!isProfile && (
-                <div className="field">
-                  <label className="label">{adminMessage}</label>
-                  <div className="control is-clearfix" data-testid="admin">
-                    {watch('isAdmin') ? (
-                      <span className="icon">
-                        <i className="mdi mdi-check" />
-                      </span>
-                    ) : (
-                      <span className="icon">
-                        <i className="mdi mdi-close" />
-                      </span>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              <div className="field">
-                <label className="label">
-                  {useFormatMessage('UserForm.created')}
-                </label>
-                <div className="control is-clearfix" data-testid="date">
-                  <p className="date">
-                    {useFormatDate(watch('createdAt'), {
-                      weekday: 'short',
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
       
     </>
   );
+                        
 };
 
 ClientForm.propTypes = {

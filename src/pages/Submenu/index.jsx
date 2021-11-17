@@ -5,17 +5,21 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import * as yup from 'yup';
 
 import ClientForm from 'components/ClientForm';
-import { createUser, modifyUser, fetchUsers } from 'state/actions/users';
+import { createclient, modifyclient, fetchclients } from 'state/actions/client';
 import paths from 'pages/Router/paths';
 import { useFormatMessage } from 'hooks';
 
 const schema = yup.object().shape({
-    email: yup.string().email().required(),
-    name: yup.string().required(),
+    year: yup.string().notRequired(),
+    birthcenter: yup.string().notRequired(),
+    region: yup.string().notRequired(),
+    address: yup.string().notRequired(),
+    email: yup.string().notRequired(),
     isAdmin: yup.boolean().notRequired(),
     location: yup.string().notRequired(),
-    createdAt: yup.string().required(),
+    createdAt: yup.string().notRequired(),
 });
+
 
 const Submenu = () => {
     const { id } = useParams();
@@ -36,7 +40,7 @@ const Submenu = () => {
     useEffect(() => {
         if (isEditing) {
             if (!userData) {
-                dispatch(fetchUsers(id));
+                dispatch(fetchclients(id));
             }
         }
     }, [isEditing, id, userData, dispatch]);
@@ -58,9 +62,9 @@ const Submenu = () => {
         };
 
         if (isEditing) {
-            dispatch(modifyUser(newUser));
+            dispatch(modifyclient(newUser));
         } else {
-            dispatch(createUser(newUser));
+            dispatch(createclient(newUser));
         }
     };
 
@@ -84,9 +88,11 @@ const Submenu = () => {
                             isEditing
                                 ? userData
                                 : {
-                                    name: '',
-                                    email: '',
-                                    location: '',
+                                    year: '',
+                                    birthcenter: '',
+                                    region: '',
+                                    address: '',
+                                    email:'',
                                     createdAt: new Date().toDateString(),
                                     isAdmin: false,
                                 }
